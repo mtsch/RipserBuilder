@@ -1,5 +1,4 @@
 # Ripser builder
-https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master
 [![Build Status](https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master)](https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master)
 
 This repository builds binary artifacts for the [Ripser](https://github.com/mtsch/Ripser.jl)
