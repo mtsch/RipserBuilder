@@ -1,10 +1,8 @@
 # Ripser builder
+https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master
+[![Build Status](https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master)](https://travis-ci.com/mtsch/RipserBuilder.svg?branch=master)
 
-This repository builds binary artifacts for the Ripser project.
-This repository has a default .travis.yml file that can be used to build
-binary artifacts on Travis CI. You will however need to setup the release
-upload manually. See https://docs.travis-ci.com/user/deployment/releases/.
+This repository builds binary artifacts for the [Ripser](https://github.com/mtsch/Ripser.jl)
+project. The source code is downloaded from [ripser.py](https://github.com/scikit-tda/ripser.py/tree/0.3.0).
 
-If you don't wish to use travis, you can use the build_tarballs.jl
-file manually and upload the resulting artifacts to a hosting provider
-of your choice.
+This repository was created using [BinaryBuilder.jl](https://github.com/JuliaPackaging/BinaryBuilder.jl).
