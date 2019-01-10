@@ -16,7 +16,8 @@ sources = [
 script = raw"""
 cd $WORKSPACE/srcdir
 g++ -std=c++11 -Ofast -fPIC -shared -L. -D NDEBUG -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER ripser.py/ripser/ripser.cpp -o libripser
-mv libripser $prefix
+mkdir $prefix/lib
+mv libripser $prefix/lib
 
 """
 
