@@ -15,9 +15,9 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
-if [[ $OSTYPE == "win32" ]]; then
+if [[ $(uname) == MSYS* ]]; then
     EXT="dll"
-elif [[ $OSTYPE == "darwin" ]]; then
+elif [[ $(uname) == "Darwin" ]]; then
     EXT="dylib"
 else
     EXT="so"
@@ -25,7 +25,6 @@ fi
 g++ -std=c++11 -Ofast -fPIC -shared -L. -D NDEBUG -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER ripser.py/ripser/ripser.cpp -o libripser.$EXT
 mkdir $prefix/lib
 mv libripser.$EXT $prefix/lib
-
 """
 
 # These are the platforms we will build for by default, unless further
