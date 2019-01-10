@@ -15,9 +15,16 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
-g++ -std=c++11 -Ofast -fPIC -shared -L. -D NDEBUG -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER ripser.py/ripser/ripser.cpp -o libripser
+if [[ $OSTYPE == "win32" ]]; then
+    EXT="dll"
+elif [[ $OSTYPE == "darwin" ]]; then
+    EXT="dylib"
+else
+    EXT="so"
+fi
+g++ -std=c++11 -Ofast -fPIC -shared -L. -D NDEBUG -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER ripser.py/ripser/ripser.cpp -o libripser.$EXT
 mkdir $prefix/lib
-mv libripser $prefix/lib
+mv libripser.$EXT $prefix/lib
 
 """
 
@@ -45,9 +52,8 @@ products(prefix) = [
 
 # Dependencies that must be installed before this package can be built
 dependencies = [
-    
+
 ]
 
 # Build the tarballs, and possibly a `build.jl` as well.
 build_tarballs(ARGS, name, version, sources, script, platforms, products, dependencies)
-
