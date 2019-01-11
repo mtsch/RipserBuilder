@@ -41,7 +41,7 @@ platforms = [
     Linux(:aarch64, libc=:musl),
     Linux(:armv7l, libc=:musl, call_abi=:eabihf),
     BinaryProvider.MacOS(),
-    FreeBSD(:x86_64),
+    #FreeBSD(:x86_64),
     Windows(:i686),
     Windows(:x86_64)
 ]
