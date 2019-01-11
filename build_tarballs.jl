@@ -17,10 +17,8 @@ script = raw"""
 cd $WORKSPACE/srcdir
 if [[ $(uname) == MSYS* ]]; then
     EXT="dll"
-    CXX="c++"
 elif [[ $(uname) == "Darwin" ]]; then
     EXT="dylib"
-    CXX="clang"
 else
     EXT="so"
     CXX="c++"
