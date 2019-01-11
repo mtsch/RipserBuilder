@@ -4,7 +4,7 @@ ENV["BINARYBUILDER_AUTOMATIC_APPLE"] = "true"
 using BinaryBuilder
 
 name = "Ripser"
-version = v"0.3.0.dev51"
+version = v"0.3.0-dev51"
 
 # Collection of sources required to build Ripser
 sources = [
