@@ -4,12 +4,12 @@ ENV["BINARYBUILDER_AUTOMATIC_APPLE"] = "true"
 using BinaryBuilder
 
 name = "Ripser"
-version = v"0.3.0"
+version = v"0.3.0.dev51"
 
 # Collection of sources required to build Ripser
 sources = [
     "https://github.com/scikit-tda/ripser.py.git" =>
-    "58cd3e4be67a1f2fa3c297f7f00f217e4ce66974",
+    "d5cb4053c6adbdcfea8f47be86e935cf83658983"
 ]
 
 # Bash recipe for building across all platforms
