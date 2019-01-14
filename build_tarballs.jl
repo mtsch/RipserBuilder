@@ -15,19 +15,16 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
-if [[ $(uname) == MSYS* ]]; then
-    EXT="dll"
-elif [[ $(uname) == "Darwin" ]]; then
-    EXT="dylib"
-else
-    EXT="so"
-    CXX="c++"
-fi
-$CXX -std=c++11 -Ofast -fPIC -shared -L. \
+$CXX -std=c++11 -Ofast -fPIC -shared -L. $LDFLAGS \
      -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER \
-     ripser.py/ripser/ripser.cpp -o libripser.$EXT
-mkdir $prefix/lib
-mv libripser.$EXT $prefix/lib
+     ripser.py/ripser/ripser.cpp -o libripser.$dlext
+if [[ $dlext == dll" ]]
+    LIB="bin"
+else
+    LIB="lib"
+fi
+mkdir $prefix/$LIB
+mv libripser.$dlext $prefix/$LIB
 """
 
 # These are the platforms we will build for by default, unless further
