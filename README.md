@@ -4,13 +4,13 @@
 This repository builds binary artifacts for the [Ripser.jl](https://github.com/mtsch/Ripser.jl)
 project. The source code is downloaded from
 [ripser.py](https://github.com/scikit-tda/ripser.py). The current build uses ripser.py
-version `0.3.0`.
+version `0.3.0.dev51`.
 
 This repository was created using
 [BinaryBuilder.jl](https://github.com/JuliaPackaging/BinaryBuilder.jl).
 
 These builds are not Julia-specific and can be used for other projects as well. They use
-Ripser's C interface. See the [header
-files](https://github.com/scikit-tda/ripser.py/blob/master/ripser/ripser.h) and [the
-source](https://github.com/scikit-tda/ripser.py/blob/master/ripser/ripser.cpp) for more
-info.
+Ripser's C interface. See the
+[header](https://github.com/scikit-tda/ripser.py/blob/master/ripser/ripser.h) and
+[source](https://github.com/scikit-tda/ripser.py/blob/master/ripser/ripser.cpp) files for
+more info.
