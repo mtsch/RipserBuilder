@@ -15,7 +15,7 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
-$CXX -std=c++11 -Ofast -fPIC -shared -L. $LDFLAGS \
+g++ -std=c++11 -Ofast -fPIC -shared -L. $LDFLAGS \
      -D USE_COEFFICIENTS -D ASSEMBLE_REDUCTION_MATRIX -D LIBRIPSER \
      ripser.py/ripser/ripser.cpp -o libripser.$dlext
 if [[ $dlext == dll ]]; then
