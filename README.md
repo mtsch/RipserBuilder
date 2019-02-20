@@ -4,7 +4,7 @@
 This repository builds binary artifacts for the [Ripser.jl](https://github.com/mtsch/Ripser.jl)
 project. The source code is downloaded from
 [ripser.py](https://github.com/scikit-tda/ripser.py). The current build uses ripser.py
-version `0.3.0.dev51`.
+version `0.3.2`.
 
 This repository was created using
 [BinaryBuilder.jl](https://github.com/JuliaPackaging/BinaryBuilder.jl).
